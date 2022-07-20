@@ -1,0 +1,16 @@
+[Unit]
+Description=react-young-conf Express Start
+After=mongod.service
+
+[Service]
+Environment=NODE_PORT=5200
+Type=simple
+User=www-data
+Restart=on-failure
+WorkingDirectory=/var/www/react-young-conference/server
+ExecStart=npm start
+
+
+[Install]
+WantedBy=multi-user.target
+Alias=reactexpress.service
