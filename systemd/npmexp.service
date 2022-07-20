@@ -1,0 +1,16 @@
+[Unit]
+Description=NPM Express Start
+After=postgresql.service
+
+[Service]
+Environment=NODE_PORT=3000
+Type=simple
+User=www-data
+Restart=on-failure
+WorkingDirectory=/var/www/ugib/server
+ExecStart=npm start
+
+
+[Install]
+WantedBy=multi-user.target
+Alias=npmexp.service
